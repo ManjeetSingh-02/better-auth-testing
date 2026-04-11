@@ -18,6 +18,8 @@ export const auth = betterAuth({
   },
   socialProviders: {
     google: {
+      prompt: 'select_account',
+      scope: ['openid', 'email'],
       clientId: env.GOOGLE_CLIENT_ID,
       clientSecret: env.GOOGLE_CLIENT_SECRET,
     },
