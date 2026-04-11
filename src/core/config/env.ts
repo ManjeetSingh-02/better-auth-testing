@@ -14,6 +14,7 @@ const envSchema = z.object({
   COOKIE_SECRET: z.string().min(32, { error: 'COOKIE_SECRET must be atleast 32 chars' }),
   BETTER_AUTH_URL: z.url({ error: 'BETTER_AUTH_URL must be a valid URL' }),
   BETTER_AUTH_SECRET: z.string().min(32, { error: 'BETTER_AUTH_SECRET must be atleast 32 chars' }),
+  BETTER_AUTH_API_KEY: z.string().nonempty({ error: 'BETTER_AUTH_API_KEY is required' }),
 });
 
 // function to validate environment variables
