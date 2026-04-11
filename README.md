@@ -11,6 +11,8 @@ COOKIE_SECRET=minimum_of_32_char_cookie_secret
 BETTER_AUTH_URL=http://localhost:3000
 BETTER_AUTH_SECRET=minimum_of_32_char_better_auth_secret
 BETTER_AUTH_API_KEY=api_key_from_better_auth_dashboard
+GOOGLE_CLIENT_ID=google_oauth_client_id
+GOOGLE_CLIENT_SECRET=google_oauth_client_secret
 ```
 
 2. Install dependencies

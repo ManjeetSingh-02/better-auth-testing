@@ -15,6 +15,8 @@ const envSchema = z.object({
   BETTER_AUTH_URL: z.url({ error: 'BETTER_AUTH_URL must be a valid URL' }),
   BETTER_AUTH_SECRET: z.string().min(32, { error: 'BETTER_AUTH_SECRET must be atleast 32 chars' }),
   BETTER_AUTH_API_KEY: z.string().nonempty({ error: 'BETTER_AUTH_API_KEY is required' }),
+  GOOGLE_CLIENT_ID: z.string().nonempty({ error: 'GOOGLE_CLIENT_ID is required' }),
+  GOOGLE_CLIENT_SECRET: z.string().nonempty({ error: 'GOOGLE_CLIENT_SECRET is required' }),
 });
 
 // function to validate environment variables
