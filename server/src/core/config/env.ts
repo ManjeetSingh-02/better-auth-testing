@@ -14,6 +14,8 @@ const envSchema = z.object({
   PORT: z.coerce.number().int().positive(),
   DATABASE_URL: z.url({ error: 'DATABASE_URL must be a valid URL' }),
   NODE_ENV: z.enum(Object.values(APP_CONFIG.NODE_ENVS)),
+  BETTER_AUTH_SECRET: z.string().min(32, { error: 'BETTER_AUTH_SECRET must be at least 32 chars' }),
+  BETTER_AUTH_URL: z.url({ message: 'BETTER_AUTH_URL must be a valid URL' }),
 });
 
 // function to validate environment variables

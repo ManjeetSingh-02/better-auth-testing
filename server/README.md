@@ -7,6 +7,8 @@ ORIGINS=http://localhost:5173
 PORT=3000
 DATABASE_URL=postgresql://username:password@localhost:5432/your_database_name
 NODE_ENV=development
+BETTER_AUTH_SECRET=minimum_of_32_char_cookie_secret
+BETTER_AUTH_URL=base_url_of_app
 ```
 
 ## Install dependencies
