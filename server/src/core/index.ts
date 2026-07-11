@@ -3,8 +3,11 @@ export { APP_CONFIG } from './config/constants.js';
 export { corsConfig } from './config/cors.js';
 export { env } from './config/env.js';
 
-//database
+// database
 export { prisma } from './database/prisma/client.js';
+
+// lib
+export { auth } from './lib/auth.js';
 
 // loader
 export { loadModules } from './loader/modules.js';
