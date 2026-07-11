@@ -9,6 +9,8 @@ DATABASE_URL=postgresql://username:password@localhost:5432/your_database_name
 NODE_ENV=development
 BETTER_AUTH_SECRET=minimum_of_32_char_cookie_secret
 BETTER_AUTH_URL=base_url_of_app
+GOOGLE_CLIENT_ID=your_google_client_id
+GOOGLE_CLIENT_SECRET=your_google_client_secret
 ```
 
 ## Install dependencies
