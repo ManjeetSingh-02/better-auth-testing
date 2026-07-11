@@ -14,13 +14,13 @@ export default function createApp(): Application {
   const application = express();
 
   // attach middlewares
-  application
-    .use(cors(corsConfig))
-    .use(express.json())
-    .use(express.urlencoded({ extended: true }));
+  application.use(cors(corsConfig));
 
   // load all modules
   loadModules(application);
+
+  // attach middlewares
+  application.use(express.json()).use(express.urlencoded({ extended: true }));
 
   // return the application
   return application;
