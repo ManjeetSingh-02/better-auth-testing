@@ -16,9 +16,11 @@ GOOGLE_CLIENT_SECRET=your_google_client_secret
 ## client/web(.env)
 ```bash
 VITE_BETTER_AUTH_URL=http://<domain>:<port>/api/v1/auth
+VITE_BETTER_AUTH_CALLBACK_URL=http://<domain>:<port>
 ```
 
 ## client/mobile(.env)
 ```bash
 EXPO_PUBLIC_BETTER_AUTH_URL=http://<domain>:<port>/api/v1/auth
+EXPO_PUBLIC_BETTER_AUTH_CALLBACK_URL=http://<domain>:<port>
 ```
