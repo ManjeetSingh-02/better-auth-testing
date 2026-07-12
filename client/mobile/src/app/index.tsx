@@ -55,7 +55,7 @@ export default function HomeScreen(): JSX.Element {
           paddingBottom: 40,
         }}
       >
-        <View className="items-center">
+        <Card className="items-center bg-white">
           <Avatar>
             <Avatar.Image source={{ uri: session.user.image ?? undefined }} />
           </Avatar>
@@ -75,7 +75,7 @@ export default function HomeScreen(): JSX.Element {
               <Text className="text-xs font-semibold text-blue-700">Better Auth</Text>
             </View>
           </View>
-        </View>
+        </Card>
 
         <Card className="mt-8 bg-white">
           <Card.Body>
