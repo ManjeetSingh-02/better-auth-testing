@@ -1,5 +1,7 @@
+/// <reference types="node" />
+
 // internal-imports
-import { env } from './src/core';
+import 'dotenv/config';
 
 // external-imports
 import { defineConfig } from 'prisma/config';
@@ -11,6 +13,6 @@ export default defineConfig({
     path: 'prisma/migrations',
   },
   datasource: {
-    url: env.DATABASE_URL,
+    url: process.env.DATABASE_URL,
   },
 });
