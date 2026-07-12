@@ -66,14 +66,14 @@ export default function App() {
             <div className='flex gap-3'>
               <button
                 onClick={() => refetch()}
-                className='rounded-xl border px-4 py-2 transition hover:bg-neutral-100 cursor-pointer'
+                className='rounded-xl bg-indigo-500 px-4 py-2 text-white cursor-pointer'
               >
-                {isRefetching ? 'Refreshing' : 'Refresh'}
+                {isRefetching ? 'Refreshing' : 'Refresh Session'}
               </button>
 
               <button
                 onClick={signOut}
-                className='rounded-xl bg-black px-5 py-2 text-white transition hover:bg-neutral-800 cursor-pointer'
+                className='rounded-xl bg-red-500 px-5 py-2 text-white cursor-pointer'
               >
                 Sign Out
               </button>
