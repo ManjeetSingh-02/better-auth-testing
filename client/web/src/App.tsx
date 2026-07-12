@@ -6,7 +6,9 @@ export default function App() {
   async function signInWithGoogle() {
     await authClient.signIn.social({
       provider: 'google',
-      callbackURL: import.meta.env.VITE_BETTER_AUTH_CALLBACK_URL,
+      callbackURL: new URL(
+        window.location.origin + import.meta.env.VITE_BETTER_AUTH_CALLBACK_URL
+      ).toString(),
     });
   }
 
