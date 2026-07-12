@@ -14,10 +14,6 @@ export const APP_CONFIG = {
 
   // all winston related constants
   WINSTON_CONFIG: {
-    DIR_PATH: 'logs/%DATE%',
-    COMBINED_FILE_NAME: 'combined.log',
-    ERROR_FILE_NAME: 'error.log',
-    DATE_PATTERN: 'YYYY-MM-DD',
     TIMESTAMP_FORMAT: 'HH:mm:ss',
   } as const,
 };
