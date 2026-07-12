@@ -4,7 +4,7 @@ Testing better auth
 ## server(.env)
 ```bash
 WEB_ORIGINS=<frontend_url-1>,<frontend_url-2>
-MOBILE_ORIGINS=<scheme-1://>,<scheme-2://>
+MOBILE_SCHEMES=<scheme-1://>,<scheme-2://>
 PORT=3000
 DATABASE_URL=<postgres_connection_string>
 NODE_ENV=development
