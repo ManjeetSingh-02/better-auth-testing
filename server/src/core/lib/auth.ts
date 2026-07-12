@@ -32,4 +32,11 @@ export const auth = betterAuth({
     },
   },
   plugins: [expo()],
+  advanced: {
+    defaultCookieAttributes: {
+      sameSite: env.NODE_ENV !== 'development' ? 'none' : 'lax',
+      secure: env.NODE_ENV !== 'development',
+      httpOnly: true,
+    },
+  },
 });
