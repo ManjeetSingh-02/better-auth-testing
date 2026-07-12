@@ -11,7 +11,6 @@ export const auth = betterAuth({
   baseURL: env.BETTER_AUTH_URL,
   trustedOrigins: [
     ...env.ORIGINS,
-    'betterauthclientmobile://',
 
     // Development mode - Expo's exp:// scheme with local IP ranges
     ...(process.env.NODE_ENV === 'development'
