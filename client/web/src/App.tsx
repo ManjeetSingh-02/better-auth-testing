@@ -6,7 +6,6 @@ export default function App() {
   async function signInWithGoogle() {
     await authClient.signIn.social({
       provider: 'google',
-      callbackURL: 'http://localhost:5173',
     });
   }
 
