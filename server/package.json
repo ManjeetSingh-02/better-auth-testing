@@ -13,7 +13,7 @@
     "typecheck": "tsc --noEmit"
   },
   "license": "ISC",
-  "packageManager": "pnpm@10.33.0",
+  "packageManager": "pnpm@11.11.0",
   "type": "module",
   "dependencies": {
     "@better-auth/expo": "^1.6.23",
