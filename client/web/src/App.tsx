@@ -115,7 +115,7 @@ export default function App() {
 
           <Section title='Session Information'>
             <Row
-              label='Session ID'
+              label='ID'
               value={session.session.id}
             />
             <Row
