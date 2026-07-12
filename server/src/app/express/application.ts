@@ -16,8 +16,6 @@ export default function createApp(): Application {
   // attach middlewares
   application.use(cors(corsConfig));
 
-  application.set('trust proxy', 1);
-
   // load all modules
   loadModules(application);
 
