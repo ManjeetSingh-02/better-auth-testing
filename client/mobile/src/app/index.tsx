@@ -61,12 +61,19 @@ export default function HomeScreen(): JSX.Element {
           </Avatar>
           <Text className="mt-4 text-3xl font-bold">{session.user.name}</Text>
           <Text className="text-default-500 mt-1">{session.user.email}</Text>
-          <View className="bg-success/10 mt-3 rounded-full px-3 py-1">
-            <Text
-              className={`text-xs font-semibold ${session.user.emailVerified ? 'text-success' : 'text-danger'}`}
+          <View className="mt-3 flex-row gap-2">
+            <View
+              className={`rounded-full px-3 py-1 ${session.user.emailVerified ? 'bg-success/10' : 'bg-danger/10'}`}
             >
-              {session.user.emailVerified ? '✓ VERIFIED' : '✗ UNVERIFIED'}
-            </Text>
+              <Text
+                className={`text-xs font-semibold ${session.user.emailVerified ? 'text-success' : 'text-danger'}`}
+              >
+                {session.user.emailVerified ? '✓ VERIFIED' : '✗ UNVERIFIED'}
+              </Text>
+            </View>
+            <View className="rounded-full bg-blue-100 px-3 py-1">
+              <Text className="text-xs font-semibold text-blue-700">Better Auth</Text>
+            </View>
           </View>
         </View>
 
@@ -102,7 +109,7 @@ export default function HomeScreen(): JSX.Element {
             <Text className="mb-2 text-lg font-semibold">Session</Text>
             <Separator />
 
-            <Row label="Session ID" value={session.session.id} />
+            <Row label="ID" value={session.session.id} />
             <Separator />
 
             <Row label="User ID" value={session.session.userId} />
