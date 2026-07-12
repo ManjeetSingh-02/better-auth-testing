@@ -62,8 +62,10 @@ export default function HomeScreen(): JSX.Element {
           <Text className="mt-4 text-3xl font-bold">{session.user.name}</Text>
           <Text className="text-default-500 mt-1">{session.user.email}</Text>
           <View className="bg-success/10 mt-3 rounded-full px-3 py-1">
-            <Text className="text-success text-xs font-semibold">
-              {session.user.emailVerified ? '✓ VERIFIED' : 'UNVERIFIED'}
+            <Text
+              className={`text-xs font-semibold ${session.user.emailVerified ? 'text-success' : 'text-danger'}`}
+            >
+              {session.user.emailVerified ? '✓ VERIFIED' : '✗ UNVERIFIED'}
             </Text>
           </View>
         </View>
@@ -82,16 +84,16 @@ export default function HomeScreen(): JSX.Element {
             <Row label="Email" value={session.user.email} />
             <Separator />
 
-            <Row label="Verified" value={String(session.user.emailVerified)} />
+            <Row label="Email Verified" value={String(session.user.emailVerified)} />
             <Separator />
 
             <Row label="Image" value={String(session.user.image)} />
             <Separator />
 
-            <Row label="Created" value={new Date(session.user.createdAt).toLocaleString()} />
+            <Row label="Created At" value={new Date(session.user.createdAt).toLocaleString()} />
             <Separator />
 
-            <Row label="Updated" value={new Date(session.user.updatedAt).toLocaleString()} />
+            <Row label="Updated At" value={new Date(session.user.updatedAt).toLocaleString()} />
           </Card.Body>
         </Card>
 
