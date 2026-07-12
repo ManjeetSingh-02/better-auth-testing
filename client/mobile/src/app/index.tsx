@@ -10,7 +10,6 @@ function Row({ label, value }: { label: string; value?: string | null }) {
   return (
     <View className="flex-row justify-between py-3">
       <Text className="text-default-500">{label}</Text>
-
       <Text className="max-w-[60%] text-right font-medium">{value || '-'}</Text>
     </View>
   );
@@ -58,13 +57,10 @@ export default function HomeScreen(): JSX.Element {
       >
         <View className="items-center">
           <Avatar>
-            <Avatar.Image source={{ uri: session.user.image ?? undefined }} className="h-28 w-28" />
+            <Avatar.Image source={{ uri: session.user.image ?? undefined }} />
           </Avatar>
-
           <Text className="mt-4 text-3xl font-bold">{session.user.name}</Text>
-
           <Text className="text-default-500 mt-1">{session.user.email}</Text>
-
           <View className="bg-success/10 mt-3 rounded-full px-3 py-1">
             <Text className="text-success text-xs font-semibold">
               {session.user.emailVerified ? '✓ VERIFIED' : 'UNVERIFIED'}
@@ -72,10 +68,9 @@ export default function HomeScreen(): JSX.Element {
           </View>
         </View>
 
-        <Card className="mt-8">
+        <Card className="mt-8 bg-white">
           <Card.Body>
             <Text className="mb-2 text-lg font-semibold">User</Text>
-
             <Separator />
 
             <Row label="ID" value={session.user.id} />
@@ -88,29 +83,42 @@ export default function HomeScreen(): JSX.Element {
             <Separator />
 
             <Row label="Verified" value={String(session.user.emailVerified)} />
+            <Separator />
 
+            <Row label="Image" value={String(session.user.image)} />
             <Separator />
 
             <Row label="Created" value={new Date(session.user.createdAt).toLocaleString()} />
+            <Separator />
+
+            <Row label="Updated" value={new Date(session.user.updatedAt).toLocaleString()} />
           </Card.Body>
         </Card>
 
-        <Card className="mt-5">
+        <Card className="mt-5 bg-white">
           <Card.Body>
             <Text className="mb-2 text-lg font-semibold">Session</Text>
-
             <Separator />
 
             <Row label="Session ID" value={session.session.id} />
-
             <Separator />
 
-            <Row label="Expires" value={new Date(session.session.expiresAt).toLocaleString()} />
-
+            <Row label="User ID" value={session.session.userId} />
             <Separator />
 
-            <Row label="IP" value={session.session.ipAddress} />
+            <Row label="Created At" value={new Date(session.session.createdAt).toLocaleString()} />
+            <Separator />
 
+            <Row label="Updated At" value={new Date(session.session.updatedAt).toLocaleString()} />
+            <Separator />
+
+            <Row label="Expires At" value={new Date(session.session.expiresAt).toLocaleString()} />
+            <Separator />
+
+            <Row label="Token" value={session.session.token} />
+            <Separator />
+
+            <Row label="IP Address" value={session.session.ipAddress} />
             <Separator />
 
             <Row label="User Agent" value={session.session.userAgent} />
@@ -121,7 +129,7 @@ export default function HomeScreen(): JSX.Element {
 
         <Button
           className="mt-8"
-          variant="secondary"
+          variant="primary"
           isDisabled={isRefetching}
           onPress={() => refetch()}
         >
