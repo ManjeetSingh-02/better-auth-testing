@@ -41,19 +41,20 @@ export default function App() {
         <header className='rounded-3xl bg-white p-8 shadow-sm'>
           <div className='flex flex-col items-center gap-6 md:flex-row'>
             <img
-              src={session.user.image ?? 'https://placehold.co/120x120?text=👤'}
-              alt={session.user.name ?? 'Profile'}
+              src={session.user.image ?? undefined}
               className='h-28 w-28 rounded-full border-4 border-neutral-200 object-cover'
             />
 
             <div className='flex-1'>
-              <h1 className='text-4xl font-bold'>{session.user.name ?? 'Unknown User'}</h1>
+              <h1 className='text-4xl font-bold'>{session.user.name}</h1>
 
               <p className='mt-2 text-lg text-neutral-600'>{session.user.email}</p>
 
               <div className='mt-4 flex flex-wrap gap-2'>
-                <span className='rounded-full bg-green-100 px-3 py-1 text-sm font-medium text-green-700'>
-                  {session.user.emailVerified ? '✓ Email Verified' : '✗ Email Not Verified'}
+                <span
+                  className={`rounded-full px-3 py-1 text-sm font-medium ${session.user.emailVerified ? 'bg-green-100 text-green-700' : 'bg-red-100 text-red-700'}`}
+                >
+                  {session.user.emailVerified ? '✓ VERIFIED' : '✗ UNVERIFIED'}
                 </span>
 
                 <span className='rounded-full bg-blue-100 px-3 py-1 text-sm font-medium text-blue-700'>
@@ -83,7 +84,7 @@ export default function App() {
         <div className='grid gap-6 lg:grid-cols-2'>
           <Section title='User Information'>
             <Row
-              label='User ID'
+              label='ID'
               value={session.user.id}
             />
             <Row
@@ -100,15 +101,15 @@ export default function App() {
             />
             <Row
               label='Image'
-              value={session.user.image}
+              value={String(session.user.image)}
             />
             <Row
               label='Created At'
-              value={session.user.createdAt?.toString()}
+              value={new Date(session.user.createdAt).toLocaleString()}
             />
             <Row
               label='Updated At'
-              value={session.user.updatedAt?.toString()}
+              value={new Date(session.user.updatedAt).toLocaleString()}
             />
           </Section>
 
@@ -123,15 +124,19 @@ export default function App() {
             />
             <Row
               label='Created At'
-              value={session.session.createdAt?.toString()}
+              value={new Date(session.session.createdAt).toLocaleString()}
             />
             <Row
               label='Updated At'
-              value={session.session.updatedAt?.toString()}
+              value={new Date(session.session.updatedAt).toLocaleString()}
             />
             <Row
               label='Expires At'
-              value={session.session.expiresAt?.toString()}
+              value={new Date(session.session.expiresAt).toLocaleString()}
+            />
+            <Row
+              label='Token'
+              value={session.session.token}
             />
             <Row
               label='IP Address'
@@ -143,12 +148,6 @@ export default function App() {
             />
           </Section>
         </div>
-
-        <Section title='Raw Session JSON'>
-          <pre className='overflow-x-auto rounded-xl bg-neutral-950 p-5 text-sm text-red-500'>
-            {JSON.stringify(session, null, 2)}
-          </pre>
-        </Section>
 
         {error && (
           <div className='rounded-xl border border-red-300 bg-red-50 p-4 text-red-600'>
