@@ -22,7 +22,7 @@ export default function HomeScreen(): JSX.Element {
   async function signInWithGoogle() {
     await authClient.signIn.social({
       provider: 'google',
-      callbackURL: '/',
+      callbackURL: process.env.EXPO_PUBLIC_BETTER_AUTH_CALLBACK_URL,
     });
   }
 
