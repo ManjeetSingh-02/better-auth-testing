@@ -1,0 +1,18 @@
+{
+  "expo": {
+    "name": "better-auth-client-mobile",
+    "slug": "better-auth-client-mobile",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "scheme": "betterauthclientmobile",
+    "userInterfaceStyle": "automatic",
+    "android": {
+      "predictiveBackGestureEnabled": false
+    },
+    "plugins": ["expo-router", "expo-status-bar", "expo-secure-store", "expo-web-browser"],
+    "experiments": {
+      "typedRoutes": true,
+      "reactCompiler": true
+    }
+  }
+}
