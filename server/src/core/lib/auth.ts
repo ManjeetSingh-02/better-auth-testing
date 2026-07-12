@@ -8,7 +8,7 @@ import { betterAuth } from 'better-auth';
 import { prismaAdapter } from 'better-auth/adapters/prisma';
 
 export const auth = betterAuth({
-  basePath: '/api/v1/auth',
+  baseURL: env.BETTER_AUTH_URL,
   trustedOrigins: [
     ...env.ORIGINS,
     'betterauthclientmobile://',
