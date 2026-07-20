@@ -1,4 +1,4 @@
-# better-auth-testing
+# testing-better-auth
 Testing better auth
 
 ## server(.env)
