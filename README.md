@@ -1,5 +1,5 @@
 # testing-better-auth
-Testing better auth
+Testing Better Auth
 
 ## server(.env)
 ```bash
